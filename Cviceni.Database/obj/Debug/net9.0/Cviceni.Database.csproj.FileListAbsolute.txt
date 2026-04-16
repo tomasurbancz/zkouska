@@ -1,0 +1,28 @@
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\bin\Debug\net9.0\Cviceni.Database.deps.json
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\bin\Debug\net9.0\Cviceni.Database.runtimeconfig.json
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\bin\Debug\net9.0\Cviceni.Database.dll
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\bin\Debug\net9.0\Cviceni.Database.pdb
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.csproj.AssemblyReference.cache
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.AssemblyInfoInputs.cache
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.AssemblyInfo.cs
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.csproj.CoreCompileInputs.cache
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.dll
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\obj\Debug\net9.0\refint\Cviceni.Database.dll
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.pdb
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.genruntimeconfig.cache
+C:\Users\tomas.urban\RiderProjects\Cviceni\Cviceni.Database\obj\Debug\net9.0\ref\Cviceni.Database.dll
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\bin\Debug\net9.0\Cviceni.Database.deps.json
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\bin\Debug\net9.0\Cviceni.Database.runtimeconfig.json
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\bin\Debug\net9.0\Cviceni.Database.dll
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\bin\Debug\net9.0\Cviceni.Database.pdb
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.csproj.AssemblyReference.cache
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.AssemblyInfoInputs.cache
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.AssemblyInfo.cs
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.csproj.CoreCompileInputs.cache
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.dll
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net9.0\refint\Cviceni.Database.dll
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.pdb
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net9.0\Cviceni.Database.genruntimeconfig.cache
+C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net9.0\ref\Cviceni.Database.dll

@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Cviceni.Database\Cviceni.Database.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Form\Form.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Controls\Header.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+      <Compile Update="Controls\Lists\StudentListControl.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="bin\Debug\net10.0-windows\data.db" />
+    </ItemGroup>
+
+</Project>

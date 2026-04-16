@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cviceni.Database", "Cviceni.Database\Cviceni.Database.csproj", "{F17ECBE5-8ADD-4398-A4ED-7482E81EAB88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cviceni.WFA", "Cviceni.WFA\Cviceni.WFA.csproj", "{77B390CF-7CC8-406C-B241-7AFCEFC33791}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F17ECBE5-8ADD-4398-A4ED-7482E81EAB88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17ECBE5-8ADD-4398-A4ED-7482E81EAB88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17ECBE5-8ADD-4398-A4ED-7482E81EAB88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17ECBE5-8ADD-4398-A4ED-7482E81EAB88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77B390CF-7CC8-406C-B241-7AFCEFC33791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B390CF-7CC8-406C-B241-7AFCEFC33791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B390CF-7CC8-406C-B241-7AFCEFC33791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B390CF-7CC8-406C-B241-7AFCEFC33791}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
