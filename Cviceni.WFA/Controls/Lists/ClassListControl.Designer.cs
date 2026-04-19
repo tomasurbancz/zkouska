@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace Cviceni.WFA.Controls.Lists;
+namespace Cviceni.WFA.Controls;
 
-partial class StudentListControl
+partial class ClassListControl
 {
     /// <summary> 
     /// Required designer variable.
@@ -25,8 +25,8 @@ partial class StudentListControl
 
     #region Component Designer generated code
 
-    /// <summary>
-    /// Required method for Designer support - do not modify
+    /// <summary> 
+    /// Required method for Designer support - do not modify 
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent()
@@ -156,6 +156,7 @@ partial class StudentListControl
     private System.Windows.Forms.Button refresh;
 
     private System.Windows.Forms.Button add;
+
 
     #endregion
 }

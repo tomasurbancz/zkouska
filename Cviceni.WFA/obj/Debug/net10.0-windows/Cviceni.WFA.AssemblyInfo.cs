@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cviceni.WFA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dae86d0c9be44bd7f64f64cac34a64f4a3a0ce10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9942ba91911b29ec078298964cb40a9ae8c5ef74")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cviceni.WFA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cviceni.WFA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,7 +2,7 @@
 
 namespace Cviceni.WFA.Form;
 
-partial class Form
+partial class MainForm
 {
     /// <summary>
     /// Required designer variable.
@@ -66,51 +66,55 @@ partial class Form
         // 
         // tabStudent
         // 
-        tabStudent.Location = new System.Drawing.Point(4, 34);
+        tabStudent.Location = new System.Drawing.Point(4, 24);
         tabStudent.Name = "tabStudent";
         tabStudent.Padding = new System.Windows.Forms.Padding(3);
-        tabStudent.Size = new System.Drawing.Size(1008, 482);
+        tabStudent.Size = new System.Drawing.Size(1008, 492);
         tabStudent.TabIndex = 0;
         tabStudent.Text = "Student";
         tabStudent.UseVisualStyleBackColor = true;
         // 
         // tabClass
         // 
-        tabClass.Location = new System.Drawing.Point(4, 34);
+        tabClass.Location = new System.Drawing.Point(4, 24);
         tabClass.Name = "tabClass";
         tabClass.Padding = new System.Windows.Forms.Padding(3);
-        tabClass.Size = new System.Drawing.Size(1008, 482);
+        tabClass.Size = new System.Drawing.Size(1008, 492);
         tabClass.TabIndex = 1;
         tabClass.Text = "Class";
         tabClass.UseVisualStyleBackColor = true;
         // 
         // tabTeacher
         // 
-        tabTeacher.Location = new System.Drawing.Point(4, 34);
+        tabTeacher.Location = new System.Drawing.Point(4, 24);
         tabTeacher.Name = "tabTeacher";
         tabTeacher.Padding = new System.Windows.Forms.Padding(3);
-        tabTeacher.Size = new System.Drawing.Size(1008, 482);
+        tabTeacher.Size = new System.Drawing.Size(1008, 492);
         tabTeacher.TabIndex = 2;
         tabTeacher.Text = "Teacher";
         tabTeacher.UseVisualStyleBackColor = true;
         // 
         // tabSubject
         // 
-        tabSubject.Location = new System.Drawing.Point(4, 34);
+        tabSubject.Location = new System.Drawing.Point(4, 24);
         tabSubject.Name = "tabSubject";
         tabSubject.Padding = new System.Windows.Forms.Padding(3);
-        tabSubject.Size = new System.Drawing.Size(1008, 482);
+        tabSubject.Size = new System.Drawing.Size(1008, 492);
         tabSubject.TabIndex = 3;
         tabSubject.Text = "Subject";
         tabSubject.UseVisualStyleBackColor = true;
         // 
-        // Form
+        // MainForm
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+        AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(1018, 574);
+        ClientSize = new System.Drawing.Size(984, 561);
         Controls.Add(tabMain);
         Controls.Add(Title);
+        FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+        Margin = new System.Windows.Forms.Padding(2);
+        MaximizeBox = false;
+        MinimizeBox = false;
         Text = "Form";
         tabMain.ResumeLayout(false);
         ResumeLayout(false);

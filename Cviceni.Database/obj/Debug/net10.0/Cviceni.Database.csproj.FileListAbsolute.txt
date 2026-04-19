@@ -12,3 +12,18 @@ C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\ne
 C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.pdb
 C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.genruntimeconfig.cache
 C:\Users\tomas.urban\Downloads\Cviceni (1)\Cviceni\Cviceni.Database\obj\Debug\net10.0\ref\Cviceni.Database.dll
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\bin\Debug\net10.0\Cviceni.Database.deps.json
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\bin\Debug\net10.0\Cviceni.Database.runtimeconfig.json
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\bin\Debug\net10.0\Cviceni.Database.dll
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\bin\Debug\net10.0\Cviceni.Database.pdb
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.csproj.AssemblyReference.cache
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.AssemblyInfoInputs.cache
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.AssemblyInfo.cs
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.csproj.CoreCompileInputs.cache
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.sourcelink.json
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.dll
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\refint\Cviceni.Database.dll
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.pdb
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\Cviceni.Database.genruntimeconfig.cache
+C:\Users\User1\OneDrive\Plocha\zkouska\Cviceni.Database\obj\Debug\net10.0\ref\Cviceni.Database.dll

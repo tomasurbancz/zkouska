@@ -4,23 +4,23 @@ using Cviceni.Database.Repository;
 using Cviceni.WFA.Form;
 using Timer = System.Windows.Forms.Timer;
 
-namespace Cviceni.WFA.Controls.Lists;
+namespace Cviceni.WFA.Controls;
 
-public partial class StudentListControl : UserControl
+public partial class SubjectListControl : UserControl
 {
     private bool _refreshing;
     private Timer _refreshTimer;
     private int _remaining = 5;
-    private StudentRepository _studentRepository;
+    private SubjectRepository _subjectRepository;
     private DatabaseContext _databaseContext;
     private Dictionary<ListViewItem, Guid> _binded;
     private int _currentPage = 1;
     private int _items = 0;
     
-    public StudentListControl(DatabaseContext databaseContext)
+    public SubjectListControl(DatabaseContext databaseContext)
     {
         InitializeComponent();
-        _studentRepository = new StudentRepository(databaseContext);
+        _subjectRepository = new SubjectRepository(databaseContext);
         _binded = new  Dictionary<ListViewItem, Guid>();
         _databaseContext = databaseContext;
         _refreshTimer = new Timer();
@@ -52,7 +52,7 @@ public partial class StudentListControl : UserControl
     {
         listView1.Items.Clear();
         _binded.Clear();
-        List<StudentEntity> entities = await _studentRepository.GetAll();
+        List<SubjectEntity> entities = await _subjectRepository.GetAll();
         _items = 0;
         int start = 1 + ((_currentPage - 1) * 10);
         int end = 10 + ((_currentPage - 1) * 10); 
@@ -100,8 +100,8 @@ public partial class StudentListControl : UserControl
     
     private void add_Click_1(object sender, EventArgs e)
     {
-        StudentForm studentForm = new StudentForm(_databaseContext, Guid.Empty);
-        studentForm.Show();
+        PredmetForm predmetForm = new PredmetForm(_databaseContext, Guid.Empty);
+        predmetForm.Show();
     }
 
     private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,8 +109,8 @@ public partial class StudentListControl : UserControl
         if (listView1.SelectedItems.Count > 0)
         {
             Guid id = _binded[listView1.SelectedItems[0]];
-            StudentForm studentForm = new StudentForm(_databaseContext, id);
-            studentForm.Show();
+            PredmetForm predmetForm = new PredmetForm(_databaseContext, id);
+            predmetForm.Show();
         }
     }
 

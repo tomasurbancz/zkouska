@@ -13,13 +13,31 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Form\Form.cs">
+      <Compile Update="Form\MainForm.cs">
         <SubType>Form</SubType>
       </Compile>
-      <Compile Update="Controls\Header.cs">
+      <Compile Update="Controls\Lists\StudentListControl.cs">
         <SubType>UserControl</SubType>
       </Compile>
-      <Compile Update="Controls\Lists\StudentListControl.cs">
+      <Compile Update="Form\StudentForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Form\ClassForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Form\TeacherForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Form\PredmetForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Controls\Lists\ClassListControl.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+      <Compile Update="Controls\Lists\SubjectListControl.cs">
+        <SubType>UserControl</SubType>
+      </Compile>
+      <Compile Update="Controls\Lists\TeacherListControl.cs">
         <SubType>UserControl</SubType>
       </Compile>
     </ItemGroup>

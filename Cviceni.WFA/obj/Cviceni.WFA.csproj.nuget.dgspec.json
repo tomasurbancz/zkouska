@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.WFA\\Cviceni.WFA.csproj": {}
+    "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.WFA\\Cviceni.WFA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.Database\\Cviceni.Database.csproj": {
+    "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.Database\\Cviceni.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.Database\\Cviceni.Database.csproj",
+        "projectUniqueName": "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.Database\\Cviceni.Database.csproj",
         "projectName": "Cviceni.Database",
-        "projectPath": "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.Database\\Cviceni.Database.csproj",
+        "projectPath": "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.Database\\Cviceni.Database.csproj",
         "packagesPath": "C:\\Users\\User1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.Database\\obj\\",
+        "outputPath": "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.Database\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -355,14 +355,14 @@
         }
       }
     },
-    "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.WFA\\Cviceni.WFA.csproj": {
+    "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.WFA\\Cviceni.WFA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.WFA\\Cviceni.WFA.csproj",
+        "projectUniqueName": "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.WFA\\Cviceni.WFA.csproj",
         "projectName": "Cviceni.WFA",
-        "projectPath": "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.WFA\\Cviceni.WFA.csproj",
+        "projectPath": "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.WFA\\Cviceni.WFA.csproj",
         "packagesPath": "C:\\Users\\User1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.WFA\\obj\\",
+        "outputPath": "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.WFA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -379,8 +379,8 @@
           "net10.0-windows7.0": {
             "targetAlias": "net10.0-windows",
             "projectReferences": {
-              "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.Database\\Cviceni.Database.csproj": {
-                "projectPath": "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.Database\\Cviceni.Database.csproj"
+              "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.Database\\Cviceni.Database.csproj": {
+                "projectPath": "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.Database\\Cviceni.Database.csproj"
               }
             }
           }

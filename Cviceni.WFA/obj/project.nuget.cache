@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cKuHW5fAXz4=",
+  "dgSpecHash": "yer2dKnMbtk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\User1\\Downloads\\Cviceni 1\\Cviceni\\Cviceni.WFA\\Cviceni.WFA.csproj",
+  "projectFilePath": "C:\\Users\\User1\\OneDrive\\Plocha\\zkouska\\Cviceni.WFA\\Cviceni.WFA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User1\\.nuget\\packages\\microsoft.data.sqlite.core\\10.0.6\\microsoft.data.sqlite.core.10.0.6.nupkg.sha512",
     "C:\\Users\\User1\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.6\\microsoft.entityframeworkcore.10.0.6.nupkg.sha512",

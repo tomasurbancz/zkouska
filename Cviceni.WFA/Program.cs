@@ -17,6 +17,6 @@ static class Program
         DatabaseContext context = new DatabaseContext();
         context.Database.Migrate();
         ApplicationConfiguration.Initialize();
-        Application.Run(new Form.Form());
+        Application.Run(new Form.MainForm());
     }
 }

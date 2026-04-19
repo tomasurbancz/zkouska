@@ -4,23 +4,23 @@ using Cviceni.Database.Repository;
 using Cviceni.WFA.Form;
 using Timer = System.Windows.Forms.Timer;
 
-namespace Cviceni.WFA.Controls.Lists;
+namespace Cviceni.WFA.Controls;
 
-public partial class StudentListControl : UserControl
+public partial class ClassListControl : UserControl
 {
     private bool _refreshing;
     private Timer _refreshTimer;
     private int _remaining = 5;
-    private StudentRepository _studentRepository;
+    private ClassRepository _classRepository;
     private DatabaseContext _databaseContext;
     private Dictionary<ListViewItem, Guid> _binded;
     private int _currentPage = 1;
     private int _items = 0;
     
-    public StudentListControl(DatabaseContext databaseContext)
+    public ClassListControl(DatabaseContext databaseContext)
     {
         InitializeComponent();
-        _studentRepository = new StudentRepository(databaseContext);
+        _classRepository = new ClassRepository(databaseContext);
         _binded = new  Dictionary<ListViewItem, Guid>();
         _databaseContext = databaseContext;
         _refreshTimer = new Timer();
@@ -52,7 +52,7 @@ public partial class StudentListControl : UserControl
     {
         listView1.Items.Clear();
         _binded.Clear();
-        List<StudentEntity> entities = await _studentRepository.GetAll();
+        List<ClassEntity> entities = await _classRepository.GetAll();
         _items = 0;
         int start = 1 + ((_currentPage - 1) * 10);
         int end = 10 + ((_currentPage - 1) * 10); 
@@ -61,7 +61,7 @@ public partial class StudentListControl : UserControl
             _items++;
             if (_items >= start && _items <= end)
             {
-                ListViewItem item = new ListViewItem(entity.Name);
+                ListViewItem item = new ListViewItem(entity.Year + " " + entity.Code);
                 listView1.Items.Add(item);
                 _binded.Add(item, entity.Id);
             }
@@ -100,8 +100,8 @@ public partial class StudentListControl : UserControl
     
     private void add_Click_1(object sender, EventArgs e)
     {
-        StudentForm studentForm = new StudentForm(_databaseContext, Guid.Empty);
-        studentForm.Show();
+        ClassForm classForm = new ClassForm(_databaseContext, Guid.Empty);
+        classForm.Show();
     }
 
     private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,8 +109,8 @@ public partial class StudentListControl : UserControl
         if (listView1.SelectedItems.Count > 0)
         {
             Guid id = _binded[listView1.SelectedItems[0]];
-            StudentForm studentForm = new StudentForm(_databaseContext, id);
-            studentForm.Show();
+            ClassForm classForm = new ClassForm(_databaseContext, id);
+            classForm.Show();
         }
     }
 
