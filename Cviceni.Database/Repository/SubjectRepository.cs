@@ -15,12 +15,16 @@ public class SubjectRepository : IRepository<SubjectEntity>
 
     public Task<List<SubjectEntity>> GetAll()
     {
-        return _context.Subjects.ToListAsync();
+        return _context.Subjects
+            .Include(subject => subject.Teachers)
+            .ToListAsync();
     }
 
     public Task<SubjectEntity?> GetById(Guid id)
     {
-        return _context.Subjects.FindAsync(id).AsTask();
+        return _context.Subjects
+            .Include(subject => subject.Teachers)
+            .FirstOrDefaultAsync(subject => subject.Id == id);
     }
 
     public Task Create(SubjectEntity entity)

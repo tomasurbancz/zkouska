@@ -61,7 +61,10 @@ public partial class TeacherListControl : UserControl
             _items++;
             if (_items >= start && _items <= end)
             {
-                ListViewItem item = new ListViewItem(entity.Name);
+                string subjects = entity.Subjects.Count == 0
+                    ? "bez předmětů"
+                    : string.Join(", ", entity.Subjects.Select(subject => subject.Code));
+                ListViewItem item = new ListViewItem($"{entity.Name} | {subjects}");
                 listView1.Items.Add(item);
                 _binded.Add(item, entity.Id);
             }

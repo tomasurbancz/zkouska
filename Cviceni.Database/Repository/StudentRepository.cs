@@ -15,12 +15,16 @@ public class StudentRepository : IRepository<StudentEntity>
 
     public Task<List<StudentEntity>> GetAll()
     {
-        return _context.Students.ToListAsync();
+        return _context.Students
+            .Include(student => student.Class)
+            .ToListAsync();
     }
 
     public Task<StudentEntity?> GetById(Guid id)
     {
-        return _context.Students.FindAsync(id).AsTask();
+        return _context.Students
+            .Include(student => student.Class)
+            .FirstOrDefaultAsync(student => student.Id == id);
     }
 
     public Task Create(StudentEntity entity)

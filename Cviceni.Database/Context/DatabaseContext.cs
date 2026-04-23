@@ -18,6 +18,17 @@ public class DatabaseContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<StudentEntity>()
+            .HasOne(student => student.Class)
+            .WithMany(classEntity => classEntity.Students)
+            .HasForeignKey(student => student.ClassEntityId)
+            .OnDelete(DeleteBehavior.SetNull);
+
+        modelBuilder.Entity<TeacherEntity>()
+            .HasMany(teacher => teacher.Subjects)
+            .WithMany(subject => subject.Teachers)
+            .UsingEntity(join => join.ToTable("TeacherSubject"));
+
         base.OnModelCreating(modelBuilder);
     }
 }

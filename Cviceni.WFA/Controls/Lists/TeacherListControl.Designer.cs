@@ -25,8 +25,8 @@ partial class TeacherListControl
 
     #region Component Designer generated code
 
-    /// <summary> 
-    /// Required method for Designer support - do not modify 
+    /// <summary>
+    /// Required method for Designer support - do not modify
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent()
@@ -89,7 +89,7 @@ partial class TeacherListControl
         listView1.Size = new System.Drawing.Size(290, 321);
         listView1.TabIndex = 4;
         listView1.UseCompatibleStateImageBehavior = false;
-        listView1.View = System.Windows.Forms.View.List;
+        listView1.View = System.Windows.Forms.View.Details;
         listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
         // 
         //  List
@@ -123,9 +123,9 @@ partial class TeacherListControl
         label3.TabIndex = 7;
         label3.Text = "10/10";
         // 
-        // StudentListControl
+        // TeacherListControl
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         Controls.Add(label3);
         Controls.Add(label2);

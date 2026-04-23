@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cviceni.Database")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+708b9a12c3779329dedb64a075df230514475a38")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cviceni.Database")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cviceni.Database")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

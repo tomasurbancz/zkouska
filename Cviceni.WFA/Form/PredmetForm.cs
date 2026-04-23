@@ -7,13 +7,34 @@ namespace Cviceni.WFA.Form;
 public partial class PredmetForm : System.Windows.Forms.Form
 {
     private SubjectRepository _subjectRepository;
+    private TeacherRepository _teacherRepository;
     private Guid _guid; 
+    private CheckedListBox _teachersBox;
+    private Label _teachersLabel;
         
     public PredmetForm(DatabaseContext db, Guid guid)
     {
         InitializeComponent();
         _subjectRepository = new SubjectRepository(db);
+        _teacherRepository = new TeacherRepository(db);
         _guid = guid;
+        _teachersLabel = new Label
+        {
+            Left = 12,
+            Top = 190,
+            Width = 360,
+            Text = "Učitelé předmětu:"
+        };
+        _teachersBox = new CheckedListBox
+        {
+            Left = 12,
+            Top = 210,
+            Width = 360,
+            Height = 95,
+            IntegralHeight = false
+        };
+        Controls.Add(_teachersLabel);
+        Controls.Add(_teachersBox);
         if (_guid != Guid.Empty)
         {
             LoadData();
@@ -21,9 +42,23 @@ public partial class PredmetForm : System.Windows.Forms.Form
         }
         else
         {
+            LoadTeachersOptions(new List<Guid>());
             delete.Visible = false;
         }
+        ReflowLayout();
         BringToFront();
+    }
+
+    private void ReflowLayout()
+    {
+        _teachersLabel.Top = hodinyBox.Bottom + 12;
+        _teachersLabel.Width = ClientSize.Width - 24;
+        _teachersBox.Top = _teachersLabel.Bottom + 4;
+        _teachersBox.Width = ClientSize.Width - 24;
+        _teachersBox.Height = 95;
+        create.Top = _teachersBox.Bottom + 20;
+        delete.Top = create.Top;
+        ClientSize = new Size(ClientSize.Width, create.Bottom + 20);
     }
 
     private async void LoadData()
@@ -33,6 +68,21 @@ public partial class PredmetForm : System.Windows.Forms.Form
         kodBox.Text = subjectEntity.Code;
         rocnikBox.Text = subjectEntity.Year + "";
         hodinyBox.Text = subjectEntity.Hours + "";
+        await LoadTeachersOptions(subjectEntity.Teachers.Select(teacher => teacher.Id).ToList());
+    }
+
+    private async Task LoadTeachersOptions(List<Guid> selectedTeacherIds)
+    {
+        List<TeacherEntity> teachers = await _teacherRepository.GetAll();
+        _teachersBox.Items.Clear();
+        teachers.ForEach(teacher =>
+        {
+            int index = _teachersBox.Items.Add(new TeacherOption(teacher.Id, $"{teacher.Name} ({teacher.Hours}h)"));
+            if (selectedTeacherIds.Contains(teacher.Id))
+            {
+                _teachersBox.SetItemChecked(index, true);
+            }
+        });
     }
 
 
@@ -43,7 +93,7 @@ public partial class PredmetForm : System.Windows.Forms.Form
         if (string.IsNullOrEmpty(predmetBox.Text)) return;
         if (string.IsNullOrEmpty(kodBox.Text)) return;
         if (!int.TryParse(rocnikBox.Text, out fRocnik)) return;
-        if (!int.TryParse(rocnikBox.Text, out fHodin)) return;
+        if (!int.TryParse(hodinyBox.Text, out fHodin)) return;
         if (fRocnik <= 0) return;
         if (fHodin <= 0) return;
         SubjectEntity entity = new SubjectEntity();
@@ -65,6 +115,7 @@ public partial class PredmetForm : System.Windows.Forms.Form
         {
             await _subjectRepository.Create(entity);
         }
+        await SyncTeachersForSubject(entity.Id);
 
         Close();
     }
@@ -74,5 +125,45 @@ public partial class PredmetForm : System.Windows.Forms.Form
         SubjectEntity entity =  await _subjectRepository.GetById(_guid);
         await _subjectRepository.Delete(entity);
         Close();
+    }
+
+    private async Task SyncTeachersForSubject(Guid subjectId)
+    {
+        SubjectEntity? subject = await _subjectRepository.GetById(subjectId);
+        if (subject == null) return;
+
+        List<Guid> selectedTeacherIds = _teachersBox.CheckedItems
+            .OfType<TeacherOption>()
+            .Select(option => option.Id)
+            .ToList();
+        List<TeacherEntity> allTeachers = await _teacherRepository.GetAll();
+
+        foreach (TeacherEntity teacher in allTeachers)
+        {
+            bool isSelected = selectedTeacherIds.Contains(teacher.Id);
+            bool alreadyLinked = teacher.Subjects.Any(s => s.Id == subjectId);
+            if (isSelected && !alreadyLinked)
+            {
+                teacher.Subjects.Add(subject);
+                await _teacherRepository.Update(teacher);
+            }
+            else if (!isSelected && alreadyLinked)
+            {
+                SubjectEntity? assigned = teacher.Subjects.FirstOrDefault(s => s.Id == subjectId);
+                if (assigned != null)
+                {
+                    teacher.Subjects.Remove(assigned);
+                    await _teacherRepository.Update(teacher);
+                }
+            }
+        }
+    }
+
+    private record TeacherOption(Guid Id, string Label)
+    {
+        public override string ToString()
+        {
+            return Label;
+        }
     }
 }

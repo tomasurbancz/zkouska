@@ -7,13 +7,34 @@ namespace Cviceni.WFA.Form;
 public partial class ClassForm : System.Windows.Forms.Form
 {
     private ClassRepository _classRepository;
+    private StudentRepository _studentRepository;
     private Guid _guid; 
+    private CheckedListBox _studentsBox;
+    private Label _studentsLabel;
         
     public ClassForm(DatabaseContext db, Guid guid)
     {
         InitializeComponent();
         _classRepository = new ClassRepository(db);
+        _studentRepository = new StudentRepository(db);
         _guid = guid;
+        _studentsLabel = new Label
+        {
+            Left = 12,
+            Top = 168,
+            Width = 360,
+            Text = "Žáci ve třídě:"
+        };
+        _studentsBox = new CheckedListBox
+        {
+            Left = 12,
+            Top = 188,
+            Width = 360,
+            Height = 110,
+            IntegralHeight = false
+        };
+        Controls.Add(_studentsLabel);
+        Controls.Add(_studentsBox);
         kmenovaBox.Visible = false;
         if (_guid != Guid.Empty)
         {
@@ -22,9 +43,24 @@ public partial class ClassForm : System.Windows.Forms.Form
         }
         else
         {
+            LoadStudentsOptions(new List<Guid>());
             delete.Visible = false;
         }
+        ReflowLayout();
         BringToFront();
+    }
+
+    private void ReflowLayout()
+    {
+        int relationTop = kmenovaBox.Visible ? kmenovaBox.Bottom : kmenovaCheck.Bottom;
+        _studentsLabel.Top = relationTop + 12;
+        _studentsLabel.Width = ClientSize.Width - 24;
+        _studentsBox.Top = _studentsLabel.Bottom + 4;
+        _studentsBox.Width = ClientSize.Width - 24;
+        _studentsBox.Height = 110;
+        create.Top = _studentsBox.Bottom + 20;
+        delete.Top = create.Top;
+        ClientSize = new Size(ClientSize.Width, create.Bottom + 20);
     }
 
     private async void LoadData()
@@ -38,6 +74,21 @@ public partial class ClassForm : System.Windows.Forms.Form
             kmenovaBox.Visible = true;
             kmenovaBox.Text = classEntity.RootClassRoomCode + "";
         }
+        await LoadStudentsOptions(classEntity.Students.Select(student => student.Id).ToList());
+    }
+
+    private async Task LoadStudentsOptions(List<Guid> selectedStudentIds)
+    {
+        List<StudentEntity> students = await _studentRepository.GetAll();
+        _studentsBox.Items.Clear();
+        students.ForEach(student =>
+        {
+            int index = _studentsBox.Items.Add(new StudentOption(student.Id, $"{student.Name} ({student.Age})"));
+            if (selectedStudentIds.Contains(student.Id))
+            {
+                _studentsBox.SetItemChecked(index, true);
+            }
+        });
     }
 
 
@@ -73,6 +124,7 @@ public partial class ClassForm : System.Windows.Forms.Form
         {
             await _classRepository.Create(entity);
         }
+        await SyncStudentsForClass(entity.Id);
 
         Close();
     }
@@ -87,6 +139,7 @@ public partial class ClassForm : System.Windows.Forms.Form
         {
             kmenovaBox.Visible = false;
         }
+        ReflowLayout();
     }
 
     private async void delete_Click(object sender, EventArgs e)
@@ -95,5 +148,37 @@ public partial class ClassForm : System.Windows.Forms.Form
         await _classRepository.Delete(entity);
         Close();
         
+    }
+
+    private async Task SyncStudentsForClass(Guid classId)
+    {
+        List<Guid> selectedStudentIds = _studentsBox.CheckedItems
+            .OfType<StudentOption>()
+            .Select(option => option.Id)
+            .ToList();
+        List<StudentEntity> allStudents = await _studentRepository.GetAll();
+
+        foreach (StudentEntity student in allStudents)
+        {
+            bool isSelected = selectedStudentIds.Contains(student.Id);
+            if (isSelected && student.ClassEntityId != classId)
+            {
+                student.ClassEntityId = classId;
+                await _studentRepository.Update(student);
+            }
+            else if (!isSelected && student.ClassEntityId == classId)
+            {
+                student.ClassEntityId = null;
+                await _studentRepository.Update(student);
+            }
+        }
+    }
+
+    private record StudentOption(Guid Id, string Label)
+    {
+        public override string ToString()
+        {
+            return Label;
+        }
     }
 }

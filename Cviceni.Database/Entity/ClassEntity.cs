@@ -10,4 +10,5 @@ public class ClassEntity : BaseEntity
     public string Code { get; set; }
     public bool RootClassRoom { get; set; }
     public int RootClassRoomCode { get; set; }
+    public ICollection<StudentEntity> Students { get; set; } = new List<StudentEntity>();
 }

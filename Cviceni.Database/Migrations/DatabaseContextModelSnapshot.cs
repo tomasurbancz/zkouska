@@ -59,6 +59,9 @@ namespace Cviceni.Database.Migrations
                     b.Property<float>("AverageScore")
                         .HasColumnType("REAL");
 
+                    b.Property<Guid?>("ClassEntityId")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("TEXT");
 
@@ -70,6 +73,8 @@ namespace Cviceni.Database.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClassEntityId");
 
                     b.ToTable("Student");
                 });
@@ -130,6 +135,51 @@ namespace Cviceni.Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Teacher");
+                });
+
+            modelBuilder.Entity("SubjectEntityTeacherEntity", b =>
+                {
+                    b.Property<Guid>("SubjectsId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("TeachersId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("SubjectsId", "TeachersId");
+
+                    b.HasIndex("TeachersId");
+
+                    b.ToTable("TeacherSubject", (string)null);
+                });
+
+            modelBuilder.Entity("Cviceni.Database.Entity.StudentEntity", b =>
+                {
+                    b.HasOne("Cviceni.Database.Entity.ClassEntity", "Class")
+                        .WithMany("Students")
+                        .HasForeignKey("ClassEntityId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Class");
+                });
+
+            modelBuilder.Entity("SubjectEntityTeacherEntity", b =>
+                {
+                    b.HasOne("Cviceni.Database.Entity.SubjectEntity", null)
+                        .WithMany()
+                        .HasForeignKey("SubjectsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Cviceni.Database.Entity.TeacherEntity", null)
+                        .WithMany()
+                        .HasForeignKey("TeachersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Cviceni.Database.Entity.ClassEntity", b =>
+                {
+                    b.Navigation("Students");
                 });
 #pragma warning restore 612, 618
         }

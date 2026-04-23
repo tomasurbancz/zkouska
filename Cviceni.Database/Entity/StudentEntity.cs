@@ -9,4 +9,6 @@ public class StudentEntity : BaseEntity
     public string Name { get; set; }
     public int Age { get; set; }
     public float AverageScore { get; set; }
+    public Guid? ClassEntityId { get; set; }
+    public ClassEntity? Class { get; set; }
 }

@@ -10,4 +10,5 @@ public class SubjectEntity : BaseEntity
     public string Code { get; set; }
     public int Year { get; set; }
     public int Hours { get; set; }
+    public ICollection<TeacherEntity> Teachers { get; set; } = new List<TeacherEntity>();
 }

@@ -61,7 +61,8 @@ public partial class StudentListControl : UserControl
             _items++;
             if (_items >= start && _items <= end)
             {
-                ListViewItem item = new ListViewItem(entity.Name);
+                string classText = entity.Class == null ? "bez třídy" : $"{entity.Class.Year}.{entity.Class.Code}";
+                ListViewItem item = new ListViewItem($"{entity.Name} | {classText}");
                 listView1.Items.Add(item);
                 _binded.Add(item, entity.Id);
             }
